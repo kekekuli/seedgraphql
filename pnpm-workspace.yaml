@@ -1,0 +1,6 @@
+packages:
+  - client
+  - server
+
+catalog:
+  graphql: ^16.12.0

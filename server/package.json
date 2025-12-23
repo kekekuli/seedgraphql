@@ -1,0 +1,7 @@
+{
+  "name": "server",
+  "packageManager": "pnpm@10.19.0",
+  "dependencies": {
+    "graphql": "catalog:"
+  }
+}
