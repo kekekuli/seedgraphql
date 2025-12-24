@@ -1,7 +1,14 @@
 {
   "name": "server",
   "packageManager": "pnpm@10.19.0",
+  "scripts": {
+    "start": "node main.js"
+  },
   "dependencies": {
-    "graphql": "catalog:"
-  }
+    "express": "catalog:",
+    "graphql": "catalog:",
+    "graphql-http": "catalog:",
+    "ruru": "catalog:"
+  },
+  "type": "module"
 }
