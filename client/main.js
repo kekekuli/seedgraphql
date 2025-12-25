@@ -1,8 +1,8 @@
 let dice = 3;
 let sides = 6;
 let query = /* GraphQL */ `
-  query RollDice($dice: Int!, $sides: Int) {
-    rollDice(numDice: $dice, numSides: $sides)
+  query ClientIp {
+    ip
   }
 `;
 
@@ -14,7 +14,6 @@ fetch('http://localhost:4000/graphql', {
   },
   body: JSON.stringify({
     query,
-    variables: { dice, sides },
   }),
 })
   .then((r) => r.json())

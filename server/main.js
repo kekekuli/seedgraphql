@@ -2,27 +2,31 @@ import express from 'express';
 import { createHandler } from 'graphql-http/lib/use/express';
 import { buildSchema } from 'graphql';
 
-// Construct a schema, using GraphQL schema language
-const schema = buildSchema(`type Query { rollDice(numDice: Int!, numSides: Int): [Int] }`);
+const schema = buildSchema(`type Query { ip: String }`);
 
-// The root provides a resolver function for each API endpoint
+function loggingMiddleware(req, res, next) {
+  console.log('ip:', req.ip);
+  next();
+}
+
 const root = {
-  rollDice({ numDice, numSides }) {
-    const output = [];
-    for (let i = 0; i < numDice; i++) {
-      output.push(1 + Math.floor(Math.random() * (numSides || 6)));
-    }
-    return output;
+  ip(args, context) {
+    return context.ip;
   },
 };
 
 const app = express();
+app.use(loggingMiddleware);
 app.all(
   '/graphql',
   createHandler({
     schema: schema,
     rootValue: root,
+    context: (req) => ({
+      ip: req.raw.ip,
+    }),
   }),
 );
 app.listen(4000);
 console.log('Running a GraphQL API server at localhost:4000/graphql');
+
