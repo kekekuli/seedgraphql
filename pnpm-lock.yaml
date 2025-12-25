@@ -23,7 +23,13 @@ importers:
 
   .: {}
 
-  client: {}
+  client:
+    dependencies:
+      '@seedgraphql/sdl':
+        specifier: workspace:*
+        version: link:../graphql
+
+  graphql: {}
 
   server:
     dependencies:

@@ -3,5 +3,9 @@
   "packageManager": "pnpm@10.19.0",
   "scripts": {
     "start": "node main.js"
-  }
+  },
+  "dependencies": {
+    "@seedgraphql/sdl": "workspace:*"
+  },
+  "type": "module"
 }

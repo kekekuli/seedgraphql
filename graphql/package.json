@@ -1,0 +1,6 @@
+{
+  "name": "@seedgraphql/sdl",
+  "main": "main.js",
+  "packageManager": "pnpm@10.19.0",
+  "type": "module"
+}
