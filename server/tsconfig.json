@@ -1,0 +1,3 @@
+{
+  "extends": "@seedgraphql/root/tsconfig.base.json"
+}

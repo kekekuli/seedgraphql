@@ -10,5 +10,9 @@
     "graphql-http": "catalog:",
     "ruru": "catalog:"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@eddeee888/gcg-typescript-resolver-files": "catalog:",
+    "@seedgraphql/root": "link:.."
+  }
 }

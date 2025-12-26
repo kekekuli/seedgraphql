@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@seedgraphql/sdl/*": [
+        "graphql/scheme/*"
+      ]
+    }
+  }
+}
