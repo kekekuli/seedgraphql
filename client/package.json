@@ -8,7 +8,6 @@
   "devDependencies": {
     "typescript": "catalog:",
     "@seedgraphql/root": "link:..",
-    "@seedgraphql/sdl": "workspace:graphql",
     "tsx": "catalog:"
   }
 }

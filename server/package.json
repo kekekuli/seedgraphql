@@ -1,8 +1,8 @@
 {
   "name": "server",
-  "packageManager": "pnpm@10.19.0",
+  "packagemanager": "pnpm@10.19.0",
   "scripts": {
-    "start": "node main.js"
+    "start": "tsx main.ts"
   },
   "dependencies": {
     "express": "catalog:",
@@ -12,7 +12,11 @@
   },
   "type": "module",
   "devDependencies": {
-    "@eddeee888/gcg-typescript-resolver-files": "catalog:",
-    "@seedgraphql/root": "link:.."
+    "@seedgraphql/root": "link:..",
+    "@seedgraphql/sdl": "workspace:graphql",
+    "@types/express": "catalog:",
+    "@types/node": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
   }
 }

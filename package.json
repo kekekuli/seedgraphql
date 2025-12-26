@@ -2,17 +2,22 @@
   "name": "seedgraphql",
   "version": "1.0.0",
   "packagemanager": "pnpm@10.19.0",
-  "devdependencies": {
+  "devDependencies": {
     "@graphql-codegen/cli": "catalog:",
     "@graphql-codegen/typescript": "catalog:",
     "@graphql-codegen/typescript-resolvers": "catalog:",
-    "@types/node": "catalog:",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "tsx": "catalog:",
     "typescript": "catalog:"
   },
   "type": "module",
   "exports": {
-    "./tsconfig.base.json": "./tsconfig.base.json",
-    "./test": "./test.ts"
+    "./tsconfig.base.json": "./tsconfig.base.json"
+  },
+  "dependencies": {
+    "graphql": "catalog:"
+  },
+  "scripts": {
+    "codegen": "graphql-codegen"
   }
 }

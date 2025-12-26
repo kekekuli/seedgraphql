@@ -4,8 +4,5 @@
   "type": "module",
   "files": [
     "scheme"
-  ],
-  "dependencies": {
-    "graphql": "catalog:"
-  }
+  ]
 }

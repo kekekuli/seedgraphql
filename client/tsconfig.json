@@ -1,3 +1,9 @@
 {
-  "extends": "@seedgraphql/root/tsconfig.base.json"
+  "extends": "@seedgraphql/root/tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "ESNext"
+    ]
+  }
 }

@@ -1,1 +1,4 @@
 node_modules/
+
+server/src/types/schema.ts
+client/src/gql/

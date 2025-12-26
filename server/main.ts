@@ -1,40 +1,51 @@
 import express from 'express';
+import { readFileSync } from 'node:fs';
+import { buildSchema } from 'graphql';
 import { createHandler } from 'graphql-http/lib/use/express';
-import {
-  GraphQLObjectType,
-  GraphQLSchema,
-  GraphQLString,
-} from 'graphql';
 
-const schema = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: 'Query',
-    fields: {
-      ip: {
-        type: GraphQLString,
-        resolve: (_, args, context) => {
-          return context.ip;
-        }
-      }
+import { Resolvers } from './src/types/schema.js';
+
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+
+const schemaPath = require.resolve('@seedgraphql/sdl/schema.graphql');
+const schema = buildSchema(readFileSync(schemaPath, 'utf-8'));
+
+const resolvers: Resolvers = {
+  Query: {
+    ip: (_, context) => {
+      return context.ip
     },
-  }),
-});
-
-function loggingMiddleware(req, res, next) {
-  console.log('ip:', req.ip);
-  next();
+    userAgent: (_, context) => {
+      return context.ua
+    }
+  }
 }
 
 const app = express();
-app.use(loggingMiddleware);
-app.all(
-  '/graphql',
-  createHandler({
-    schema: schema,
-    context: (req) => ({
-      ip: req.raw.ip,
-    }),
-  }),
-);
-app.listen(4000);
-console.log('Running a GraphQL API server at localhost:4000/graphql');
+
+app.use(express.json())
+
+app.use((req, _res, next) => {
+  console.log("ip", req.ip);
+  next();
+})
+
+
+
+app.all('/graphql', createHandler({
+  schema: schema,
+  rootValue: resolvers.Query,
+  context: (req) => {
+    return {
+      ip: (req.raw as any).ip || '127.0.0.1',
+      ua: (req.raw as any).headers['user-agent'] || 'unknow',
+    }
+  }
+}))
+
+const PORT = 4000;
+app.listen(PORT, () => {
+  console.log(`✅ GraphQL Server 启动成功！`);
+  console.log(`🚀 地址: http://localhost:${PORT}/graphql`);
+});

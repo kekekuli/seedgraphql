@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@seedgraphql/sdl/*": [
-        "graphql/scheme/*"
-      ]
-    }
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": [
+      "ESNext"
+    ]
   }
 }
