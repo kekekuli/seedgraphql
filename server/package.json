@@ -7,8 +7,7 @@
   "dependencies": {
     "express": "catalog:",
     "graphql": "catalog:",
-    "graphql-http": "catalog:",
-    "ruru": "catalog:"
+    "graphql-http": "catalog:"
   },
   "type": "module",
   "devDependencies": {

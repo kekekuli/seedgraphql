@@ -2,3 +2,7 @@ node_modules/
 
 server/src/types/schema.ts
 client/src/gql/
+
+graphql/schema-types/
+graphql/client-types/
+graphql/modules/**/module-types.ts

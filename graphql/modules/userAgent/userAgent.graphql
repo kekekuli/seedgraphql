@@ -1,4 +1,4 @@
 type Query{
-  ip: String! 
+  ip: String,
   userAgent: String
 }

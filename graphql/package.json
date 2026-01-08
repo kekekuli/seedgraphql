@@ -2,7 +2,14 @@
   "name": "@seedgraphql/sdl",
   "packageManager": "pnpm@10.19.0",
   "type": "module",
-  "files": [
-    "scheme"
-  ]
+  "devDependencies": {
+    "@graphql-codegen/graphql-modules-preset": "catalog:",
+    "@graphql-typed-document-node/core": "catalog:",
+    "graphql-modules": "catalog:"
+  },
+  "exports": {
+    "./schema": "./schema-types/schema.ts",
+    "./modules/*": "./modules/*/module-types.ts",
+    "./client": "./client-types/index.ts"
+  }
 }

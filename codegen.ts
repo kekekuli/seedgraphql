@@ -1,22 +1,29 @@
-import { CodegenConfig } from '@graphql-codegen/cli'
+import type { CodegenConfig } from '@graphql-codegen/cli'
 
 const config: CodegenConfig = {
-  schema: "graphql/schema.graphql",
+  schema: "graphql/modules/**/*.graphql",
+  documents: "graphql/queries/*.graphql",
   generates: {
-    "server/src/types/schema.ts": {
+    "graphql/modules/": {
+      preset: "graphql-modules",
+      presetConfig: {
+        baseTypesPath: "../schema-types/schema.ts",
+        filename: "module-types.ts",
+      },
       plugins: [
-        "typescript",
-        "typescript-resolvers"
-      ],
-      config: {
-        useIndexSignature: true
-      }
+        {
+          add: {
+            content: '/* eslint-disable */'
+          }
+        },
+        'typescript',
+        'typescript-resolvers'
+      ]
     },
-    "client/src/gql/": {
-      documents: "graphql/documents/**/*.graphql",
+    "graphql/client-types/": {
       preset: "client",
       presetConfig: {
-        fragmentMasking: false,
+        fragmentMasking: true
       }
     }
   }

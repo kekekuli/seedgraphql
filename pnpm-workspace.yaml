@@ -6,13 +6,15 @@ packages:
 catalog:
   '@eddeee888/gcg-typescript-resolver-files': ^0.14.1
   '@graphql-codegen/cli': 6.1.0
-  '@graphql-codegen/typescript': ^5.0.7
+  '@graphql-codegen/graphql-modules-preset': ^5.1.2
+  '@graphql-codegen/typescript': 5.0.7
   '@graphql-codegen/typescript-resolvers': ^5.1.5
+  '@graphql-typed-document-node/core': ^3.2.0
   '@types/express': ^5.0.6
   '@types/node': ^22.0.0
   express: ^5.2.1
   graphql: 16.12.0
   graphql-http: ^1.22.4
-  ruru: 2.0.0-rc.3
+  graphql-modules: ^3.0.0
   tsx: 4.21.0
   typescript: 5.9.3
