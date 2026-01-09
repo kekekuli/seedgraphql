@@ -5,16 +5,21 @@ packages:
 
 catalog:
   '@eddeee888/gcg-typescript-resolver-files': ^0.14.1
+  '@envelop/graphql-modules': ^9.0.0
   '@graphql-codegen/cli': 6.1.0
   '@graphql-codegen/graphql-modules-preset': ^5.1.2
   '@graphql-codegen/typescript': 5.0.7
   '@graphql-codegen/typescript-resolvers': ^5.1.5
+  '@graphql-tools/load-files': ^7.0.1
   '@graphql-typed-document-node/core': ^3.2.0
+  '@hono/node-server': ^1.19.7
   '@types/express': ^5.0.6
   '@types/node': ^22.0.0
   express: ^5.2.1
   graphql: 16.12.0
   graphql-http: ^1.22.4
-  graphql-modules: ^3.0.0
+  graphql-modules: 3.0.0
+  graphql-yoga: ^5.18.0
+  hono: ^4.11.3
   tsx: 4.21.0
   typescript: 5.9.3

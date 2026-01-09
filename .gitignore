@@ -1,8 +1,6 @@
 node_modules/
 
-server/src/types/schema.ts
-client/src/gql/
+client/src/generated-types/
 
 graphql/schema-types/
-graphql/client-types/
 graphql/modules/**/module-types.ts

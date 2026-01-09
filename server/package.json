@@ -5,9 +5,15 @@
     "start": "tsx main.ts"
   },
   "dependencies": {
+    "@envelop/graphql-modules": "catalog:",
+    "@graphql-tools/load-files": "catalog:",
+    "@hono/node-server": "catalog:",
     "express": "catalog:",
     "graphql": "catalog:",
-    "graphql-http": "catalog:"
+    "graphql-http": "catalog:",
+    "graphql-modules": "catalog:",
+    "graphql-yoga": "catalog:",
+    "hono": "catalog:"
   },
   "type": "module",
   "devDependencies": {

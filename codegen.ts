@@ -18,15 +18,15 @@ const config: CodegenConfig = {
         },
         'typescript',
         'typescript-resolvers'
-      ]
-    },
-    "graphql/client-types/": {
-      preset: "client",
-      presetConfig: {
-        fragmentMasking: true
+      ],
+      config: {
+        contextType: "../../server/src/context#Context"
       }
+    },
+    "client/src/generated-types/": {
+      preset: "client",
     }
-  }
+  },
 }
 
 export default config

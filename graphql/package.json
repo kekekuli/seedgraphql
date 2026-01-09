@@ -10,6 +10,6 @@
   "exports": {
     "./schema": "./schema-types/schema.ts",
     "./modules/*": "./modules/*/module-types.ts",
-    "./client": "./client-types/index.ts"
+    "./package.json": "./package.json"
   }
 }
