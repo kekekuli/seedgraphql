@@ -25,7 +25,7 @@ catalogs:
       specifier: ^7.0.1
       version: 7.0.1
     '@graphql-typed-document-node/core':
-      specifier: ^3.2.0
+      specifier: 3.2.0
       version: 3.2.0
     '@hono/node-server':
       specifier: ^1.19.7
@@ -48,6 +48,9 @@ catalogs:
     graphql-modules:
       specifier: 3.0.0
       version: 3.0.0
+    graphql-request:
+      specifier: ^7.4.0
+      version: 7.4.0
     graphql-yoga:
       specifier: ^5.18.0
       version: 5.18.0
@@ -89,6 +92,13 @@ importers:
         version: 5.9.3
 
   client:
+    dependencies:
+      '@graphql-typed-document-node/core':
+        specifier: 'catalog:'
+        version: 3.2.0(graphql@16.12.0)
+      graphql-request:
+        specifier: 'catalog:'
+        version: 7.4.0(graphql@16.12.0)
     devDependencies:
       '@seedgraphql/root':
         specifier: link:..
@@ -1375,6 +1385,11 @@ packages:
     resolution: {integrity: sha512-ADQRySHp7SMqLHsv/NMkEBqOcyAC5bT6bTYuQemjmvSsF+gj1iQbzNF1pjy1lsE6UWxvRRzZN+sovp85Z6c3Vw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+
+  graphql-request@7.4.0:
+    resolution: {integrity: sha512-xfr+zFb/QYbs4l4ty0dltqiXIp07U6sl+tOKAb0t50/EnQek6CVVBLjETXi+FghElytvgaAWtIOt3EV7zLzIAQ==}
+    peerDependencies:
+      graphql: 14 - 16
 
   graphql-tag@2.12.6:
     resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
@@ -3592,6 +3607,11 @@ snapshots:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.12.0)
       graphql: 16.12.0
       ramda: 0.30.1
+
+  graphql-request@7.4.0(graphql@16.12.0):
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.12.0)
+      graphql: 16.12.0
 
   graphql-tag@2.12.6(graphql@16.12.0):
     dependencies:

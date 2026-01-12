@@ -6,8 +6,12 @@
   },
   "type": "module",
   "devDependencies": {
-    "typescript": "catalog:",
     "@seedgraphql/root": "link:..",
-    "tsx": "catalog:"
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@graphql-typed-document-node/core": "catalog:",
+    "graphql-request": "catalog:"
   }
 }
