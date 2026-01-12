@@ -1,0 +1,3 @@
+query getMultiple($a: Int!) {
+  multiplyBy2(a: $a) 
+}

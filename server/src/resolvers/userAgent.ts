@@ -7,6 +7,11 @@ export const resolvers: UserAgentModule.Resolvers = {
     },
     userAgent: (_parent, _args, { req }) => {
       return req.header('user-agent') || 'unknown';
+    },
+    timestamp: () => {
+      return {
+        iso: new Date().toISOString(),
+      }
     }
   }
 }

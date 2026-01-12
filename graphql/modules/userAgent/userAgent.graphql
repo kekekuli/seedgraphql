@@ -1,4 +1,9 @@
 type Query{
   ip: String,
   userAgent: String
+  timestamp: Timestamp
+}
+
+type Timestamp{
+  iso: String
 }

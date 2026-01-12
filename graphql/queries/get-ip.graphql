@@ -1,4 +1,8 @@
 query getIpAndUserAgent {
   ip
-  userAgent
+  userAgent,
+  timestamp{
+    __typename
+    iso
+  }
 }
